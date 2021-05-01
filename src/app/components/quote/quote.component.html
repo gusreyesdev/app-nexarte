@@ -1,0 +1,120 @@
+<ngx-spinner type="square-loader"></ngx-spinner>
+
+<div class="bg-car-quote">
+    <main role="main" class="container">
+        <div class="box">
+            <mat-card class="card-box">
+                <mat-card-header class="m-auto">
+                    <mat-card-title>¡Cotiza la tuya!</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <div>
+                        <mat-form-field [formGroup]="formControlGroup" class="selects" appearance="outline">
+                            <mat-label>Seleccione un Modelo</mat-label>
+                            <mat-select formControlName="carFormControl" required>
+                                <mat-option *ngFor="let car of cars" [value]="car.subtitle">
+                                    {{car.subtitle}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="formControlGroup.get('carFormControl').hasError('required')">
+                                {{getErrorCar()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-form-field [formGroup]="formControlGroup" class="input" appearance="outline">
+                            <mat-label>Ingresar Nombre Completo</mat-label>
+                            <input matInput formControlName="nameFormControl" required>
+
+                            <mat-error *ngIf="formControlGroup.get('nameFormControl').hasError('required')">
+                                {{getErrorName()}}</mat-error>
+
+                            <mat-error *ngIf="formControlGroup.get('nameFormControl').hasError('pattern')">
+                                {{getErrorName()}}</mat-error>
+
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-form-field [formGroup]="formControlGroup" class="input" appearance="outline">
+                            <mat-label>Ingresar Correo</mat-label>
+                            <input type="email" matInput formControlName="emailFormControl" required>
+
+                            <mat-error *ngIf="formControlGroup.get('emailFormControl').hasError('required')">
+                                {{getErrorEmail()}}</mat-error>
+
+                            <mat-error *ngIf="formControlGroup.get('emailFormControl').hasError('email')">
+                                {{getErrorEmail()}}</mat-error>
+
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <mat-form-field [formGroup]="formControlGroup" class="input" appearance="outline">
+                            <mat-label>Ingresar Celular</mat-label>
+                            <input type="number" matInput formControlName="phoneFormControl" required>
+
+                            <mat-error *ngIf="formControlGroup.get('phoneFormControl').hasError('required')">
+                                {{getErrorPhone()}}</mat-error>
+
+                            <mat-error *ngIf="formControlGroup.get('phoneFormControl').hasError('max')">
+                                {{getErrorPhone()}}</mat-error>
+
+                        </mat-form-field>
+                    </div>
+
+
+                    <div class="container-state">
+                        <mat-form-field [formGroup]="formControlGroup" class="selects" appearance="outline">
+                            <mat-label>Seleccione Departamento</mat-label>
+                            <mat-select formControlName="stateFormControl" required>
+                                <mat-option *ngFor="let state of states" [value]="state.id">
+                                    {{state.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="formControlGroup.get('stateFormControl').hasError('required')">
+                                {{getErrorState()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="container-city">
+                        <mat-form-field [formGroup]="formControlGroup" class="selects" appearance="outline">
+                            <mat-label>Seleccione Ciudad</mat-label>
+                            <mat-select formControlName="cityFormControl" required>
+                                <mat-option *ngFor="let city of cities" [value]="city.id">
+                                    {{city.name}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="formControlGroup.get('cityFormControl').hasError('required')">
+                                {{getErrorCity()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div [formGroup]="formControlGroup">
+                        <mat-checkbox formControlName="checkFormControl">Acepto la política de <a
+                                href="https://linkmys.com/wp-content/uploads/2020/10/Politica-de-Proteccion-y-Tratamiento-de-Datos-Personales.pdf"
+                                target="_blank"> Tratamiento de Datos
+                                Personales </a> </mat-checkbox>
+                    </div>
+
+                    <div>
+                        <button class="btn btn-custom rounded-pill" mat-stroked-button (click)="onSave()"> Enviar
+                            Datos</button>
+                    </div>
+
+                </mat-card-content>
+
+            </mat-card>
+        </div>
+    </main>
+
+</div>
+
+<div class="container-koranto bg-koranto">
+    <div class="container-img-korando"></div>
+
+    <div class="container-title-korando">
+        <p> Un emblema Coreano que representa tradición y confianza </p>
+    </div>
+</div>

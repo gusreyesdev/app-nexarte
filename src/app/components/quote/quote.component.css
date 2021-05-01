@@ -1,0 +1,60 @@
+.bg-car-quote {
+  background-image: url("../../../assets/images/car-quote.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.box {
+  width: 35%;
+}
+.card-box{
+  background-color: #F7F7F7;
+}
+
+:host /deep/ .mat-card-header-text {
+  margin: auto;
+}
+
+.selects {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.bg-koranto {
+  background-color: #f4f4f4;
+}
+
+.container-img-korando {
+  content: url("../../../assets/images/korando.png");
+  width: 20%;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.container-title-korando {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, 
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
+	background-color: #000000;
+}
+
+.btn-custom {
+  background-color: #000000;
+  color: white;
+}
+
